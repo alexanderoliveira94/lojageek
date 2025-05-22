@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container principal */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.main-container h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+/* Cartão do formulário */
+.form-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Agrupamentos de campos */
+.form-group,
+.form-group-inline {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-inline {
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+/* Inputs e selects */
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+input[readonly] {
+  background-color: #eaeaea;
+  color: #555;
+}
+
+/* Botões */
+button {
+  padding: 10px 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #388e3c;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .form-group-inline {
+    flex-direction: column;
+  }
+
+  .form-card {
+    padding: 20px;
+  }
+}

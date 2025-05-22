@@ -1,0 +1,44 @@
+<app-home></app-home>
+<div class="main-container">
+  <h1>Histórico de Vendas</h1>
+
+  <div class="sales-table-container">
+    <table class="sales-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Criação</th>
+          <th>Valor</th>
+          <th>Pagamento</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sale of sales">
+          <td>{{ sale.id }}</td>
+          <td>{{ sale.created_at }}</td>
+          <td>{{ sale.value }}</td>
+          <td>{{ sale.paymentType }}</td>
+          <td>{{ sale.status }}</td>
+          <td>
+            <button
+              *ngIf="sale.status !== 'Pago' && sale.status !== 'Cancelado'"
+              class="btn-cancel"
+              (click)="cancelSale(sale)"
+            >
+              Cancelar
+            </button>
+            <button
+              *ngIf="sale.status !== 'Cancelado' && sale.status !== 'Pago'"
+              class="btn-paid"
+              (click)="paidSale(sale.id)"
+            >
+              Dar baixa
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
